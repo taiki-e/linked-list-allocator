@@ -15,16 +15,18 @@ rust-version = "1.61"
 
 [features]
 default = ["use_spin"]
-use_spin = ["spinning_top"]
+use_spin = ["spin"]
 # deprecated - use `use_spin` instead
 use_spin_nightly = ["use_spin"]
 alloc_ref = []
 # deprecated - no effect
 const_mut_refs = []
 
-[dependencies.spinning_top]
-version = "0.2.5"
+[dependencies.spin]
+version = "0.9"
 optional = true
+default-features = false
+features = ["spin_mutex"]
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(fuzzing)'] }

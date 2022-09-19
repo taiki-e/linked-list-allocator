@@ -6,7 +6,7 @@
 extern crate std;
 
 #[cfg(feature = "use_spin")]
-extern crate spinning_top;
+extern crate spin;
 
 #[cfg(feature = "use_spin")]
 use core::alloc::GlobalAlloc;
@@ -21,7 +21,7 @@ use core::ptr::NonNull;
 use hole::Hole;
 use hole::HoleList;
 #[cfg(feature = "use_spin")]
-use spinning_top::Spinlock;
+use spin::Mutex as Spinlock;
 
 pub mod hole;
 #[cfg(test)]
